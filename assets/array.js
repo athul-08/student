@@ -1,4 +1,3 @@
-// Array of students
 let students = [
     { name: "Nandu", age: 20, department: "Computer Science", totalMarks: 85 },
     { name: "Mithun", age: 22, department: "Physical Education", totalMarks: 78 },
@@ -8,7 +7,6 @@ let students = [
     { name: "Santo", age: 22, department: "Electrical Engineering", totalMarks: 88 },
 ];
 
-// Function to display students in the table
 function displayStudents() {
     let tbody = document.getElementById("student-body");
     tbody.innerHTML = "";
@@ -24,21 +22,18 @@ function displayStudents() {
     });
 }
 
-// Function to sort students based on selected field
 function sortStudents() {
     let sortField = document.getElementById("sort").value;
     students.sort((a, b) => (a[sortField] > b[sortField]) ? 1 : -1);
     displayStudents();
 }
 
-// Function to filter students by total marks greater than given mark
 function filterStudents() {
     let filterValue = document.getElementById("filter").value;
     let filteredStudents = students.filter(student => student.totalMarks > filterValue);
     displayFilteredStudents(filteredStudents);
 }
 
-// Function to display filtered students
 function displayFilteredStudents(filteredStudents) {
     let tbody = document.getElementById("student-body");
     tbody.innerHTML = "";
@@ -54,7 +49,6 @@ function displayFilteredStudents(filteredStudents) {
     });
 }
 
-// Function to implement wild search for the table
 function searchStudents() {
     let searchText = document.getElementById("search").value.toLowerCase();
     let filteredStudents = students.filter(student =>
@@ -62,6 +56,4 @@ function searchStudents() {
     );
     displayFilteredStudents(filteredStudents);
 }
-
-// Initial display of students
 displayStudents();
